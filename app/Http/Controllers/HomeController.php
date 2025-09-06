@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\About;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('frontend.landing.landing');
+                $about = About::first();
+
+        return view('frontend.landing.landing', compact('about'));
         
     }
 }

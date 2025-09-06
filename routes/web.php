@@ -33,4 +33,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('contacts', ContactAdminController::class);
 });
 
+use App\Http\Controllers\AboutController;
+
+// Public route (anyone can view About Us)
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');
+
+// Auth-protected routes (only logged-in users can create/edit)
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/about/create', [AboutController::class, 'create'])->name('about.create');
+    Route::post('/admin/about', [AboutController::class, 'store'])->name('about.store');
+    Route::get('/admin/about/{id}/edit', [AboutController::class, 'edit'])->name('about.edit');
+    Route::put('/admin/about/{id}', [AboutController::class, 'update'])->name('about.update');
+});
+
 require __DIR__.'/auth.php';

@@ -14,6 +14,28 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'alfan-green': {
+                    light: '#8BC34A',
+                    DEFAULT: '#4CAF50',
+                    dark: '#2E7D32',
+                },
+                'alfan-orange': {
+                    light: '#FFB74D',
+                    DEFAULT: '#FF9800',
+                    dark: '#F57C00',
+                },
+                'alfan-white': '#F8F9FA',
+                'alfan-black': '#212121',
+
+                'brand-olive': '#A4B743',
+                'brand-sun': '#FEE275',
+                'brand-gold': '#C79124',
+                'brand-sky': '#499FB6',
+                'brand-aqua': '#69AEB3',
+                'brand-brown': '#6B4B34',
+                
+            },
         },
     },
 

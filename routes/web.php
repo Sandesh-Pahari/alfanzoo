@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\ContactAdminController;
+use App\Http\Controllers\MenuController;
+
 
 // Route::get('/', function () {
 //     return view('template.template');
@@ -45,5 +47,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/about/{id}/edit', [AboutController::class, 'edit'])->name('about.edit');
     Route::put('/admin/about/{id}', [AboutController::class, 'update'])->name('about.update');
 });
+
+
+Route::get('/menu', [MenuController::class, 'index'])->name('menu.index');
+Route::post('/menu', [MenuController::class, 'store'])->name('menu.store')->middleware('auth');
+Route::delete('/menu/{menu}', [MenuController::class, 'destroy'])->name('menu.destroy')->middleware('auth');
 
 require __DIR__.'/auth.php';

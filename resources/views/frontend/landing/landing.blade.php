@@ -7,6 +7,9 @@
     <section id="about" class="">
         @include('frontend.landing.about')
     </section>
+    <section id="facility" class="">
+        @include('frontend.landing.facility')
+    </section>
     
 
     

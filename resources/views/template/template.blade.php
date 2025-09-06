@@ -75,7 +75,7 @@
     <section id="header">
         @include('layouts.header')
     </section>
-    <section class="flex-grow">
+    <section class="">
         @yield('pagecontent')
     </section>
 

@@ -226,7 +226,7 @@ body.homepage #navbar:not(.scrolled) a {
 
                 @auth
                   <li class="relative group">
-                    <a href="{{('admin.dashboard')}}">
+                    <a href="{{('admindashboard')}}">
                         <button
                             {{-- class="flex items-center text-xl font-bold px-3 py-0.5 hover:text-orange-400 focus:outline-none  {{ request()->routeIs('contact') ? 'text-orange-400' : '' }} " --}}
                             class="flex items-center  text-xl font-bold px-3  py-0.5 hover:text-[#D4A76A] focus:outline-none  transition-colors duration-300">

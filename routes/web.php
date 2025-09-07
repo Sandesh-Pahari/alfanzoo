@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\ContactAdminController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\MenuController;
 
 
@@ -62,5 +63,21 @@ Route::middleware('auth')->group(function () {
     Route::post('/gallery', [GalleryController::class, 'store'])->name('gallery.store');
     Route::delete('/gallery/{gallery}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
 });
+
+
+
+Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
+Route::get('/rooms/{room}', [RoomController::class, 'show'])->name('rooms.show');
+
+// Authenticated routes
+Route::middleware('auth')->group(function () {
+    Route::get('/rooms/create', [RoomController::class, 'create'])->name('rooms.create');
+    Route::post('/rooms', [RoomController::class, 'store'])->name('rooms.store');
+    Route::get('/rooms/{room}/edit', [RoomController::class, 'edit'])->name('rooms.edit');
+    Route::put('/rooms/{room}', [RoomController::class, 'update'])->name('rooms.update');
+    Route::delete('/rooms/{room}', [RoomController::class, 'destroy'])->name('rooms.destroy');
+});
+
+
 
 require __DIR__.'/auth.php';

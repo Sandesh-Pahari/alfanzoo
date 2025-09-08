@@ -9,19 +9,20 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ContactFormMail extends Mailable
+class ContactFormMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    public $contact;
+    public $data;
 
     /**
      * Create a new message instance.
+     *
+     * @param array $data
      */
-    public function __construct($contact)
+    public function __construct(array $data)
     {
-        //
-                $this->contact = $contact;
+        $this->data = $data;
     }
 
     /**
@@ -30,7 +31,7 @@ class ContactFormMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Contact Form SUbmission',
+            subject: 'New Contact Form Submission',
         );
     }
 
@@ -40,17 +41,15 @@ class ContactFormMail extends Mailable
     public function content(): Content
     {
         return new Content(
-           view: 'emails.contact_form',
+            view: 'emails.contact_form',
             with: [
-                'contact' => $this->contact,
+                'data' => $this->data,
             ]
         );
     }
 
     /**
      * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
      */
     public function attachments(): array
     {

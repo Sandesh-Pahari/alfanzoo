@@ -176,7 +176,7 @@ body.homepage #navbar:not(.scrolled) a {
                     </ul>
                 </li>
                 <li class="relative group">
-                        <a href="{{('rooms')}}">
+                        <a href="{{route('rooms.index')}}">
                             <button class="flex items-center  font-semibold px-3 mb-2  hover:text-[#D4A76A] focus:outline-none  transition-colors duration-300">
                             Rooms
                             
@@ -186,7 +186,7 @@ body.homepage #navbar:not(.scrolled) a {
                     </li>
 
                  <li class="relative group">
-                    <a href="{{('menu')}}">
+                    <a href="{{route('menu.index')}}">
                         <button class="flex items-center  font-semibold px-3 hover:text-[#D4A76A] focus:outline-none transition-colors duration-300">
                             Menu
                         </button>
@@ -194,7 +194,7 @@ body.homepage #navbar:not(.scrolled) a {
                 </li>
 
                 <li class="relative group">
-                    <a href="{{('gallery')}}">
+                    <a href="{{route('gallery.index')}}">
                         <button class="flex items-center  font-semibold px-3 hover:text-[#D4A76A] focus:outline-none transition-colors duration-300">
                             Gallery
                         </button>
@@ -214,7 +214,7 @@ body.homepage #navbar:not(.scrolled) a {
                 
                      
                 <li class="relative group">
-                    <a href="{{('contact')}}">
+                    <a href="{{route('contact')}}">
                         <button class="flex items-center  font-semibold px-3 mb-2 hover:text-[#D4A76A] focus:outline-none transition-colors duration-300">
                             Contact Us
                             
@@ -226,7 +226,7 @@ body.homepage #navbar:not(.scrolled) a {
 
                 @auth
                   <li class="relative group">
-                    <a href="{{('admindashboard')}}">
+                    <a href="{{route('admin.dashboard')}}">
                         <button
                             {{-- class="flex items-center text-xl font-bold px-3 py-0.5 hover:text-orange-400 focus:outline-none  {{ request()->routeIs('contact') ? 'text-orange-400' : '' }} " --}}
                             class="flex items-center  text-xl font-bold px-3  py-0.5 hover:text-[#D4A76A] focus:outline-none  transition-colors duration-300">

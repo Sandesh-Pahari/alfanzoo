@@ -11,6 +11,8 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\Admin\BookingAdminController;
+use App\Models\Booking;
 
 // ---------------- Home ----------------
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -35,6 +37,8 @@ Route::middleware(['auth', 'verified'])->get('/admindashboard', [AdminController
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('contacts', ContactAdminController::class);
+    Route::resource('booking', BookingAdminController::class);
+
 });
 
 // ---------------- About ----------------

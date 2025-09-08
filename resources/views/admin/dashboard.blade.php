@@ -43,31 +43,26 @@
             <span>About Us</span>
         </a>
 
-        <a href="{{('courses.index')}}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-            <span>Our Courses</span>
-        </a>
+
 
 
         <!-- Menu -->
-        <a href="{{ ('menu.index') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
+        <a href="{{route('menu.index') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
             <span>Menu</span>
         </a>
-
-        <!-- Alumni -->
-        <a href="{{ ('alumni.index') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
+        <!--Rooms-->
+         <a href="{{ route('rooms.index') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7a2 2 0 002 2z" />
             </svg>
-            <span>Alumni</span>
-        </a>
+            <span>Rooms</span>
 
-       <a href="{{ ('gallery.index') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
+
+
+       <a href="{{ route('gallery.index') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M4 5h16c.552 0 1 .448 1 1v12c0 .552-.448 1-1 1H4c-.552 0-1-.448-1-1V6c0-.552.448-1 1-1z" />
@@ -86,103 +81,6 @@
             <span>FAQs</span>
         </a>
 
-
-            
-
-        {{-- <a href="{{ route('aboutus') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M8 11h.01M16 11h.01M12 17c2.5 0 4.5-1.5 5.5-3.5M6.5 13.5C7.5 15.5 9.5 17 12 17m0 0c-2.5 0-4.5-1.5-5.5-3.5M12 17v4m-6-8c0 4.418 3.582 8 8 8s8-3.582 8-8" />
-            </svg>
-            <span>Endorsed Brands</span>
-        </a> --}}
-
-        <a href="{{ ('aboutus') }}#partners-section" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.286 7.049 7.392.107c.969.014 1.371 1.24.588 1.81l-5.986 4.347 2.249 7.073c.285.898-.755 1.64-1.54 1.105L12 18.896l-6.94 4.522c-.784.535-1.825-.207-1.54-1.105l2.25-7.073-5.987-4.347c-.782-.57-.38-1.796.588-1.81l7.392-.107 2.286-7.049z" />
-            </svg>
-            <span>Placement Partners</span>
-        </a>
-
-        <a href="{{ ('aboutus') }}#brands-section" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 2l3 6 6 .5-4.5 4.5 1 6-5.5-3-5.5 3 1-6L3 8.5 9 8l3-6z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M9 12l2 2 4-4" />
-            </svg>
-            <span>Endorsed Brands</span>
-        </a>
-
-        <a href="{{ ('blogs.index') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M7 8h10M7 12h6m-6 4h10M5 4h14a2 2 0 012 2v12a2 2 0 
-                        01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" />
-            </svg>
-            <span>Blogs</span>
-        </a>
-
-        <a href="{{ ('review') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 
-                        012-2h14a2 2 0 012 2v8a2 2 0 
-                        01-2 2h-3l-4 4z" />
-            </svg>
-            <span>Testimonials</span>
-        </a>
-
-        <a href="{{ route('home') }}#program" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 
-                    2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <span>Program Calendar</span>
-        </a>
-
-        <a href="{{ ('awards.index') }}#awards" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 21h8m-4-4v4m-6-12a4 4 0 01-4-4V5a2 2 0 
-                    012-2h2V2h2v1h6V2h2v1h2a2 2 0 012 2v1a4 4 0 
-                    01-4 4H6z" />
-            </svg>
-            <span>Award</span>
-        </a>
-
-
-
-        <a href="{{ ('home') }}#stat" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 17v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 
-                002 2h2a2 2 0 002-2zm7 0v-2a2 2 0 00-2-2h-2a2 
-                2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2zm7 
-                0v-10a2 2 0 00-2-2h-2a2 2 0 00-2 2v10a2 
-                2 0 002 2h2a2 2 0 002-2z" />
-        </svg>
-        <span> Add Statistics</span>
-    </a>
-
-
-
-
-
-        
-
-
-
-
-
-
-       
-        <!-- Our Courses -->
-        
-        
-
         <!-- Existing Items -->
          <a href="{{ route('admin.contacts.index') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -198,17 +96,17 @@
             @endisset
         </a>
 
-       {{-- <a href="{{ route('admin.enrollments.index') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
+       <a href="{{ route('admin.booking.index') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
-            <span>Enrollments</span>
-            @if($unreadEnrollmentCount = \App\Models\Enrollment::where('is_read', false)->count())
+            <span>Booking</span>
+            @if($unreadBookingCount = \App\Models\Booking::where('is_read', false)->count())
                 <span class="bg-red-500 text-white text-sm rounded-full px-2 py-1 ml-2">
-                    {{ $unreadEnrollmentCount }}
+                    {{ $unreadBookingCount }}
                 </span>
             @endif
-        </a> --}}
+        </a>
     </nav>
 </aside>
 
@@ -286,21 +184,21 @@
 
         <!-- Enrollments Box -->
         <div class="bg-gray-800 rounded-xl shadow-lg p-8 text-white hover:bg-gray-700 transition duration-200 h-full min-h-[180px] flex flex-col justify-between">
-            <a href="{{ ('admin.enrollments.index') }}" class="flex flex-col h-full justify-between">
+            <a href="{{ route('admin.booking.index') }}" class="flex flex-col h-full justify-between">
                 <div class="flex items-center space-x-6">
                     <div class="p-4 rounded-full bg-gray-700 relative">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
-                        @if(isset($unreadEnrollmentCount) && $unreadEnrollmentCount > 0)
+                        @if(isset($unreadBookingCount) && $unreadBookingCount > 0)
                         <span class="absolute -top-2 -right-2 bg-red-500 text-white text-sm rounded-full h-6 w-6 flex items-center justify-center animate-pulse">
-                            {{ $unreadEnrollmentCount }}
+                            {{ $unreadBookingCount }}
                         </span>
                         @endif
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold">Enrollments</h3>
-                        <p class="text-gray-300 text-base mt-2">{{ $unreadEnrollmentCount ?? 0 }} New</p>
+                        <h3 class="text-xl font-semibold">Booking</h3>
+                        <p class="text-gray-300 text-base mt-2">{{ $unreadBookingCount ?? 0 }} New</p>
                     </div>
                 </div>
                 <div class="flex justify-end mt-4">

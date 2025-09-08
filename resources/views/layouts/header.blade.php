@@ -205,7 +205,7 @@ body.homepage #navbar:not(.scrolled) a {
                 
                 
                 <li class="reltive group">
-                    <a href="{{('faqs.index')}}">
+                    <a href="{{route('faqs.index')}}">
                         <button class="flex items-center  font-semibold px-3 mb-2 hover:text-[#D4A76A] focus:outline-none transition-colors duration-300">
                             Faqs
                         </button>
@@ -302,28 +302,28 @@ body.homepage #navbar:not(.scrolled) a {
                 </li> --}}
                 
                 <li>
-                    <a href="{{('menu')}}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Menu</a>
+                    <a href="{{route('menu.index')}}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Menu</a>
                 </li>
                 
                 <li>
                     <a href="{{('team')}}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Team</a>
                 </li>
                 
-                {{-- <li>
-                    <a href="{{ ('faqs.index') }}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">FAQs</a>
+                 <li>
+                    <a href="{{ route('faqs.index') }}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">FAQs</a>
                 </li>
                 
                 <li>
-                    <a href="/contact" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Contact</a>
+                    <a href=" {{ route('contact') }} " class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Contact</a>
                 </li>
                  <li>
-                    <a href="/gallery" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Gallery</a>
+                    <a href="{{ route ('gallery.index')}}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Gallery</a>
                 </li>
                 @auth
                 <li>
                     <a href="{{ ('admin.dashboard') }}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Dashboard</a>
                 </li>
-                @endauth --}}
+                @endauth 
             </ul>
         </div>
     </div>

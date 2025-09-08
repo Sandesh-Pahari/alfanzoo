@@ -1,106 +1,133 @@
 @extends('template.template')
 
 @section('pagecontent')
-<section class="bg-gray-100 mt-16 xl:mt-20 min-h-screen w-full">
-    <div class="flex flex-col items-center justify-center mt-6 px-10">
-        <!-- Title -->
-        <div class="flex items-center justify-center w-full max-w-4xl mx-auto xs:mb-4 mt-8">
-            <div class="hidden sm:block flex-1 border-t-2 border-[#0b3e85]"></div>
+    <div class="max-w-3xl mx-auto mt-12 bg-white p-8 shadow-lg rounded-xl">
+        <h1 class="text-2xl font-bold text-blue-800 mb-6">Add New Room</h1>
 
-            <h1 class="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-bold text-[#0b3e85] xs:mx-4 sm:mx-8 text-center uppercase whitespace-nowrap">
-                Available Rooms
-            </h1>
+        @if (session('success'))
+            <div class="mb-4 text-green-600">{{ session('success') }}</div>
+        @endif
 
-            <div class="hidden sm:block flex-1 border-t-2 border-[#0b3e85]"></div>
-        </div>
+        <form action="{{ route('rooms.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
 
-        <div class="mt-4 flex gap-4">
-            @auth
-            <a href="{{ route('rooms.create') }}" 
-               class="bg-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600 transition duration-300 shadow-md">
-                Add Room
-            </a>
-            @endauth
-        </div>
-    </div>
+            <div class="mb-3">
+                <label class="block font-semibold">Room Name</label>
+                <input type="text" name="name" value="{{ old('name') }}" class="border p-2 w-full">
+                @error('name')
+                    <div class="text-red-600 text-sm">{{ $message }}</div>
+                @enderror
+            </div>
 
-    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 xmd:grid-cols-2 lg:grid-cols-3 gap-6 mb-5 mt-6 px-8">
-        @if($rooms->isEmpty())
-            <p class="text-gray-500 text-center col-span-full">No rooms available.</p>
-        @else
-            @foreach ($rooms as $room)
-            <div class="group bg-white rounded-3xl shadow-xl hover:shadow-lg transition-all duration-300 overflow-hidden border-6 border-white hover:border-blue-100/30 relative transform">
-                <!-- Room Image -->
-                <div class="relative overflow-hidden">
-                    @if($room->image)
-                    <img class="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-500" 
-                         src="{{ asset('storage/' . $room->image) }}" 
-                         alt="{{ $room->name }}">
-                    @else
-                    <div class="w-full h-56 flex items-center justify-center bg-gray-200 text-gray-500">No Image</div>
-                    @endif
+            <div class="mb-3">
+                <label class="block font-semibold">Type</label>
+                <input type="text" name="type" value="{{ old('type') }}" class="border p-2 w-full"
+                    placeholder="Deluxe, Suite...">
+                @error('type')
+                    <div class="text-red-600 text-sm">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label class="block font-semibold">Description</label>
+                <textarea name="description" class="border p-2 w-full" rows="4">{{ old('description') }}</textarea>
+                @error('description')
+                    <div class="text-red-600 text-sm">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div>
+                    <label class="block font-semibold">Capacity</label>
+                    <input type="number" name="capacity" min="1" value="{{ old('capacity') }}"
+                        class="border p-2 w-full">
+                    @error('capacity')
+                        <div class="text-red-600 text-sm">{{ $message }}</div>
+                    @enderror
                 </div>
 
-                <!-- Price Badge -->
-                <div class="absolute top-56 left-1/2 -translate-x-1/2 bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 text-white px-6 py-1.5 rounded-full text-base font-bold shadow-lg flex items-center gap-2 transform -translate-y-1/2 z-30 border-2 border-blue-200/30">
-                    $ {{ $room->price }} / night
+                <div>
+                    <label class="block font-semibold">Beds</label>
+                    <input type="text" name="beds" min="1" value="{{ old('beds') }}"
+                        class="border p-2 w-full">
+                    @error('beds')
+                        <div class="text-red-600 text-sm">{{ $message }}</div>
+                    @enderror
                 </div>
 
-                <!-- Content -->
-                <div class="p-6 bg-gradient-to-b from-white to-blue-50/20">
-                    <h2 class="text-2xl font-bold bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 bg-clip-text text-transparent mb-4">
-                        {{ $room->name }}
-                    </h2>
-                    
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-center p-3 bg-white rounded-lg border shadow-md">
-                            <span class="material-symbols-outlined text-blue-600/90 text-xl mr-3">bed</span>
-                            <span class="text-base font-semibold">Type: {{ $room->type }}</span>
-                        </div>
-                        
-                        <div class="flex items-center p-3 bg-white rounded-lg border shadow-md">
-                            <span class="material-symbols-outlined text-blue-600/90 text-xl mr-3">group</span>
-                            <span class="text-base font-semibold">Capacity: {{ $room->capacity }} people</span>
-                        </div>
-                        
-                        <div class="flex items-center p-3 bg-white rounded-lg border shadow-md">
-                            <span class="material-symbols-outlined text-blue-600/90 text-xl mr-3">hotel</span>
-                            <span class="text-base font-semibold">Beds: {{ $room->beds }}</span>
-                        </div>
-                    </div>
-
-                    <!-- Buttons -->
-                    {{-- <div class="space-y-3">
-                        <a href="{{ route('rooms.show', $room->id) }}" 
-                           class="w-full bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2">
-                            <span class="material-symbols-outlined text-lg">visibility</span>
-                            View Details
-                        </a> --}}
-
-                        @auth
-                        <div class="flex gap-3">
-                            <a href="{{ route('rooms.edit', $room->id) }}" class="w-1/2">
-                                <button class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-xl font-bold flex items-center justify-center gap-2 text-sm">
-                                    <span class="material-symbols-outlined text-base">edit</span>
-                                    Edit
-                                </button>
-                            </a>
-                            <form action="{{ route('rooms.destroy', $room->id) }}" method="POST" class="w-1/2">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" onclick="return confirm('Are you sure?')" 
-                                    class="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-xl font-bold flex items-center justify-center gap-2 text-sm">
-                                    <span class="material-symbols-outlined text-base">delete</span>
-                                    Delete
-                                </button>
-                            </form>
-                        </div>
-                        @endauth
-                    </div>
+                <div>
+                    <label class="block font-semibold">Price (per night)</label>
+                    <input type="number" name="price" step="0.01" min="0" value="{{ old('price') }}"
+                        class="border p-2 w-full">
+                    @error('price')
+                        <div class="text-red-600 text-sm">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
-            @endforeach
-        @endif
+
+            <div class="mt-4 mb-3">
+                <label class="block font-semibold">Image</label>
+                <input type="file" name="image" class="border p-2 w-full">
+                @error('image')
+                    <div class="text-red-600 text-sm">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="mt-4">
+                <label class="block font-semibold mb-2">Facilities</label>
+                <div id="facilities-container">
+                    {{-- preserve old values --}}
+                    @if (old('facilities'))
+                        @foreach (old('facilities') as $f)
+                            <div class="flex gap-2 mb-2">
+                                <input type="text" name="facilities[]" value="{{ $f }}"
+                                    placeholder="e.g. WiFi" class="border p-2 w-full">
+                                <button type="button" onclick="removeThis(this)" class="px-2">✕</button>
+                            </div>
+                        @endforeach
+                    @else
+                        <div class="flex gap-2 mb-2">
+                            <input type="text" name="facilities[]" placeholder="e.g. WiFi" class="border p-2 w-full">
+                            <button type="button" onclick="removeThis(this)" class="px-2">✕</button>
+                        </div>
+                    @endif
+                </div>
+                @error('facilities')
+                    <div class="text-red-600 text-sm">{{ $message }}</div>
+                @enderror
+                @error('facilities.*')
+                    <div class="text-red-600 text-sm">{{ $message }}</div>
+                @enderror
+
+                <div class="mt-2">
+                    <button type="button" onclick="addFacility()" class="bg-blue-500 text-white px-3 py-1 rounded">+ Add
+                        Facility</button>
+                </div>
+            </div>
+
+            <div class="flex gap-3 mt-4">
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">
+                    Save
+                </button>
+                <button type="button" onclick="window.history.back()" class="bg-gray-400 text-white px-4 py-2 rounded">
+                    Cancel
+                </button>
+            </div>
+        </form>
     </div>
-</section>
+
+    <script>
+        function addFacility() {
+            let container = document.getElementById('facilities-container');
+            let wrapper = document.createElement('div');
+            wrapper.className = 'flex gap-2 mb-2';
+            wrapper.innerHTML =
+                `<input type="text" name="facilities[]" placeholder="e.g. Swimming Pool" class="border p-2 w-full"><button type="button" onclick="removeThis(this)" class="px-2">✕</button>`;
+            container.appendChild(wrapper);
+        }
+
+        function removeThis(btn) {
+            btn.parentNode.remove();
+        }
+    </script>
 @endsection

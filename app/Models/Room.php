@@ -8,13 +8,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Room extends Model
 {
-        use HasFactory;
+  use HasFactory;
 
-      protected $fillable = [
-        'name',
-        'type',
-        'capacity',
-        'beds',
-        'price',
-        'image', ];
+  protected $fillable = [
+    'name',
+    'type',
+    'description',
+    'capacity',
+    'beds',
+    'price',
+    'image',
+    'facilities',
+  ];
+  protected $casts = [
+    'facilities' => 'array', // auto cast JSON to array
+  ];
 }

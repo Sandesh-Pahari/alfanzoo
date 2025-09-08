@@ -175,6 +175,15 @@ body.homepage #navbar:not(.scrolled) a {
                        
                     </ul>
                 </li>
+                <li class="relative group">
+                        <a href="{{('rooms')}}">
+                            <button class="flex items-center  font-semibold px-3 mb-2  hover:text-[#D4A76A] focus:outline-none  transition-colors duration-300">
+                            Rooms
+                            
+                            </button>
+                        </a>
+                    
+                    </li>
 
                  <li class="relative group">
                     <a href="{{('menu')}}">
@@ -203,15 +212,6 @@ body.homepage #navbar:not(.scrolled) a {
                     </a>
                 </li>
                 
-                <li class="relative group">
-                        <a href="{{('team')}}">
-                            <button class="flex items-center  font-semibold px-3 mb-2  hover:text-[#D4A76A] focus:outline-none  transition-colors duration-300">
-                            Team
-                            
-                            </button>
-                        </a>
-                    
-                    </li>
                      
                 <li class="relative group">
                     <a href="{{('contact')}}">

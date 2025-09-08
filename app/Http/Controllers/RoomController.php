@@ -24,9 +24,12 @@ class RoomController extends Controller
             'name' => 'required|string|max:255',
             'type' => 'required|string|max:255',
             'capacity' => 'required|integer|min:1',
-            'beds' => 'required|integer|min:1',
+            'description' => 'nullable|string',
+            'beds' => 'required|string|min:1',
             'price' => 'required|numeric|min:0',
             'image' => 'nullable|image|max:2048',
+            'facilities' => 'nullable|array',
+            'facilities.*' => 'string|max:255',
         ]);
 
         $data = $request->all();
@@ -35,10 +38,14 @@ class RoomController extends Controller
             $data['image'] = $request->file('image')->store('rooms', 'public');
         }
 
+        // Save facilities as array → JSON
+        $data['facilities'] = array_filter($request->facilities ?? []);
+
         Room::create($data);
 
         return redirect()->route('rooms.index')->with('success', 'Room added successfully.');
     }
+
 
     public function show(Room $room)
     {
@@ -56,9 +63,12 @@ class RoomController extends Controller
             'name' => 'required|string|max:255',
             'type' => 'required|string|max:255',
             'capacity' => 'required|integer|min:1',
-            'beds' => 'required|integer|min:1',
+            'description' => 'nullable|string',
+            'beds' => 'required|string|min:1',
             'price' => 'required|numeric|min:0',
             'image' => 'nullable|image|max:2048',
+            'facilities' => 'nullable|array',
+            'facilities.*' => 'string|max:255',
         ]);
 
         $data = $request->all();
@@ -66,6 +76,8 @@ class RoomController extends Controller
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('rooms', 'public');
         }
+
+        $data['facilities'] = array_filter($request->facilities ?? []);
 
         $room->update($data);
 
@@ -78,4 +90,3 @@ class RoomController extends Controller
         return redirect()->route('rooms.index')->with('success', 'Room deleted successfully.');
     }
 }
-

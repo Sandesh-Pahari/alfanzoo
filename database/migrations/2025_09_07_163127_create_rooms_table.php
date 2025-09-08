@@ -14,11 +14,14 @@ return new class extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('type'); // Deluxe, Suite, Standard
+            $table->string('type')->nullable(); // Deluxe, Suite, Standard
+            $table->longText('description')->nullable();
             $table->integer('capacity'); // number of people
-            $table->integer('beds'); // number of beds
-            $table->decimal('price', 8, 2); // per night
+            $table->string('beds'); // number of beds
+            $table->integer('price'); // per night
             $table->string('image')->nullable();
+            $table->json('facilities')->nullable();
+
             $table->timestamps();
         });
     }

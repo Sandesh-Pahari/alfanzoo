@@ -23,4 +23,10 @@ class Room extends Model
   protected $casts = [
     'facilities' => 'array', // auto cast JSON to array
   ];
+
+  // Relation with Booking
+  public function bookings()
+  {
+    return $this->hasMany(Booking::class);
+}
 }

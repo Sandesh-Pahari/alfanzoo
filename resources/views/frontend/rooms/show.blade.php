@@ -271,7 +271,7 @@
                     </form>
                 @endauth
 
-                <a href="#"
+                <a href=" {{ route('booking.create', $room->id) }}"
                     class="group relative px-10 py-5 bg-gradient-to-r from-alfan-green to-alfan-green-dark text-white rounded-2xl font-bold hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden">
                     <div
                         class="absolute inset-0 bg-gradient-to-r from-alfan-green-dark to-brand-olive opacity-0 group-hover:opacity-100 transition-opacity duration-500">

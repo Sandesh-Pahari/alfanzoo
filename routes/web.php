@@ -10,6 +10,8 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\BookingController;
+
 // ---------------- Home ----------------
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -74,5 +76,13 @@ Route::middleware('auth')->group(function () {
 
 // Public show must be placed AFTER /rooms/create
 Route::get('/rooms/{room}', [RoomController::class, 'show'])->name('rooms.show');
+
+
+// Booking form for a specific room
+Route::get('/booking/{room}', [BookingController::class, 'create'])->name('booking.create');
+
+// Store booking
+Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+
 
 require __DIR__.'/auth.php';

@@ -76,7 +76,7 @@
     <section id="header">
         @include('layouts.header')
     </section>
-    <section class="">
+    <section class="bg-brand-sun/10">
         @yield('pagecontent')
     </section>
 

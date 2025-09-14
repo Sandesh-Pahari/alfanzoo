@@ -10,6 +10,12 @@
     <section id="facility" class="">
         @include('frontend.landing.facility')
     </section>
+    <section id="facility" class="">
+        @include('frontend.landing.room')
+    </section>
+    <section id="facility" class="">
+        @include('frontend.landing.gallery')
+    </section>
     
 
     

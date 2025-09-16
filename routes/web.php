@@ -12,8 +12,9 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\TableController;
+use App\Http\Controllers\Admin\TableAdminController;
 use App\Http\Controllers\Admin\BookingAdminController;
-use App\Models\Booking;
 
 // ---------------- Home ----------------
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -39,6 +40,7 @@ Route::middleware(['auth', 'verified'])->get('/admindashboard', [AdminController
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('contacts', ContactAdminController::class);
     Route::resource('booking', BookingAdminController::class);
+    Route::resource('table', TableAdminController::class);
 
 });
 
@@ -102,5 +104,9 @@ Route::controller(FaqController::class)->group(function () {
         Route::delete('faqs/{faq:slug}', 'destroy')->name('faqs.destroy');
     });
 });
+
+Route::get('/book-table', [TableController::class, 'create'])->name('table.create');
+Route::post('/book-table', [TableController::class, 'store'])->name('table.store');
+
 
 require __DIR__.'/auth.php';

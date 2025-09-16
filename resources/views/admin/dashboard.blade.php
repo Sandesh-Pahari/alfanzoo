@@ -95,12 +95,25 @@
                 @endif
             @endisset
         </a>
+         <a href="{{ route('admin.table.index') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A10.001 10.001 0 0112 2a10.001 10.001 0 016.879 15.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span>Table Booking</span>
+            @isset($unreadTableCount)
+                @if ($unreadTableCount > 0)
+                    <span class="bg-red-500 text-white text-sm rounded-full px-2 py-1 ml-2">
+                        {{ $unreadTableCount }}
+                    </span>
+                @endif
+            @endisset
+        </a>
 
        <a href="{{ route('admin.booking.index') }}" class="flex items-center space-x-2 px-4 py-3 hover:bg-gray-700 rounded">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
-            <span>Booking</span>
+            <span>Room Booking</span>
             @if($unreadBookingCount = \App\Models\Booking::where('is_read', false)->count())
                 <span class="bg-red-500 text-white text-sm rounded-full px-2 py-1 ml-2">
                     {{ $unreadBookingCount }}
@@ -151,7 +164,7 @@
             </header>
 
             <!-- Dashboard Stats Boxes -->
-<article class="max-w-[90%] mx-auto">
+{{-- <article class="max-w-[90%] mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8"> <!-- Increased gap to 8 -->
         
 
@@ -209,7 +222,7 @@
             </a>
         </div>
     </div>
-</article>
+</article> --}}
 
             <!-- Page Content -->
             <main class="p-6">

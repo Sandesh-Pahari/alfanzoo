@@ -110,7 +110,7 @@
           <label class="block text-sm font-semibold text-gray-700 mb-2">Pickup Location</label>
           <input type="text" name="pickup_details" value="{{ old('pickup_details') }}"
            class="w-full rounded-xl border border-orange-200 px-4 py-3.5 shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none"
-           placeholder="If yes, please specify the pickup location">
+           placeholder="If yes, please specify the pickup location and time.">
         </div>
 
         <script>

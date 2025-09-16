@@ -175,9 +175,18 @@ body.homepage #navbar:not(.scrolled) a {
                        
                     </ul>
                 </li>
+                <li class="relative group">
+                        <a href="{{route('rooms.index')}}">
+                            <button class="flex items-center  font-semibold px-3 mb-2  hover:text-[#D4A76A] focus:outline-none  transition-colors duration-300">
+                            Rooms
+                            
+                            </button>
+                        </a>
+                    
+                    </li>
 
                  <li class="relative group">
-                    <a href="{{('menu')}}">
+                    <a href="{{route('menu.index')}}">
                         <button class="flex items-center  font-semibold px-3 hover:text-[#D4A76A] focus:outline-none transition-colors duration-300">
                             Menu
                         </button>
@@ -185,7 +194,7 @@ body.homepage #navbar:not(.scrolled) a {
                 </li>
 
                 <li class="relative group">
-                    <a href="{{('gallery')}}">
+                    <a href="{{route('gallery.index')}}">
                         <button class="flex items-center  font-semibold px-3 hover:text-[#D4A76A] focus:outline-none transition-colors duration-300">
                             Gallery
                         </button>
@@ -196,25 +205,16 @@ body.homepage #navbar:not(.scrolled) a {
                 
                 
                 <li class="reltive group">
-                    <a href="{{('faqs.index')}}">
+                    <a href="{{route('faqs.index')}}">
                         <button class="flex items-center  font-semibold px-3 mb-2 hover:text-[#D4A76A] focus:outline-none transition-colors duration-300">
                             Faqs
                         </button>
                     </a>
                 </li>
                 
-                <li class="relative group">
-                        <a href="{{('team')}}">
-                            <button class="flex items-center  font-semibold px-3 mb-2  hover:text-[#D4A76A] focus:outline-none  transition-colors duration-300">
-                            Team
-                            
-                            </button>
-                        </a>
-                    
-                    </li>
                      
                 <li class="relative group">
-                    <a href="{{('contact')}}">
+                    <a href="{{route('contact')}}">
                         <button class="flex items-center  font-semibold px-3 mb-2 hover:text-[#D4A76A] focus:outline-none transition-colors duration-300">
                             Contact Us
                             
@@ -226,7 +226,7 @@ body.homepage #navbar:not(.scrolled) a {
 
                 @auth
                   <li class="relative group">
-                    <a href="{{('admindashboard')}}">
+                    <a href="{{route('admin.dashboard')}}">
                         <button
                             {{-- class="flex items-center text-xl font-bold px-3 py-0.5 hover:text-orange-400 focus:outline-none  {{ request()->routeIs('contact') ? 'text-orange-400' : '' }} " --}}
                             class="flex items-center  text-xl font-bold px-3  py-0.5 hover:text-[#D4A76A] focus:outline-none  transition-colors duration-300">
@@ -302,28 +302,28 @@ body.homepage #navbar:not(.scrolled) a {
                 </li> --}}
                 
                 <li>
-                    <a href="{{('menu')}}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Menu</a>
+                    <a href="{{route('menu.index')}}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Menu</a>
                 </li>
                 
                 <li>
                     <a href="{{('team')}}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Team</a>
                 </li>
                 
-                {{-- <li>
-                    <a href="{{ ('faqs.index') }}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">FAQs</a>
+                 <li>
+                    <a href="{{ route('faqs.index') }}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">FAQs</a>
                 </li>
                 
                 <li>
-                    <a href="/contact" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Contact</a>
+                    <a href=" {{ route('contact') }} " class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Contact</a>
                 </li>
                  <li>
-                    <a href="/gallery" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Gallery</a>
+                    <a href="{{ route ('gallery.index')}}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Gallery</a>
                 </li>
                 @auth
                 <li>
                     <a href="{{ ('admin.dashboard') }}" class="block px-4 py-2 text-lg text-[#FFF8E1] font-semibold" style="color: #FFF8E1 !important;">Dashboard</a>
                 </li>
-                @endauth --}}
+                @endauth 
             </ul>
         </div>
     </div>

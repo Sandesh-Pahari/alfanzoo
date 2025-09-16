@@ -8,21 +8,22 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Table;
 
-class ContactFormMail extends Mailable implements ShouldQueue
+class TableMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    public $data;
+    public $table;
 
     /**
      * Create a new message instance.
      *
      * @param array $data
      */
-    public function __construct(array $data)
+    public function __construct(Table $table)
     {
-        $this->data = $data;
+        $this->table = $table;
     }
 
     /**
@@ -31,7 +32,7 @@ class ContactFormMail extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Contact Form Submission',
+            subject: 'New table Form Submission',
         );
     }
 
@@ -41,9 +42,9 @@ class ContactFormMail extends Mailable implements ShouldQueue
     public function content(): Content
     {
         return new Content(
-            view: 'emails.contact_form',
+            view: 'emails.table',
             with: [
-                'data' => $this->data,
+                'data' => $this->table,
             ]
         );
     }

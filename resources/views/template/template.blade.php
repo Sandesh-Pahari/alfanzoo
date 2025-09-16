@@ -14,6 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap"
         rel="stylesheet">
+        <script src="https://kit.fontawesome.com/14e5f92c3c.js" crossorigin="anonymous"></script>
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
@@ -75,7 +76,7 @@
     <section id="header">
         @include('layouts.header')
     </section>
-    <section class="">
+    <section class="bg-brand-sun/10">
         @yield('pagecontent')
     </section>
 

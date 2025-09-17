@@ -1,6 +1,8 @@
 @extends('template.template')
 
 @section('pagecontent')
+     {{-- Notice Popup --}}
+    @include('frontend.notice.show')
     <section id="hero" class="">
         @include('frontend.landing.hero')
     </section>

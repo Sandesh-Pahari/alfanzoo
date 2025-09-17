@@ -15,6 +15,7 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\Admin\TableAdminController;
 use App\Http\Controllers\Admin\BookingAdminController;
+use App\Http\Controllers\NoticeController;
 
 // ---------------- Home ----------------
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -107,6 +108,16 @@ Route::controller(FaqController::class)->group(function () {
 
 Route::get('/book-table', [TableController::class, 'create'])->name('table.create');
 Route::post('/book-table', [TableController::class, 'store'])->name('table.store');
+
+// Protected routes
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/notices', [NoticeController::class, 'list'])->name('notices.list');
+    Route::get('/admin/notices/create', [NoticeController::class, 'create'])->name('notices.create');
+    Route::post('/admin/notices', [NoticeController::class, 'store'])->name('notices.store');
+    Route::get('/admin/notices/{notice}/edit', [NoticeController::class, 'edit'])->name('notices.edit');
+    Route::put('/admin/notices/{notice}', [NoticeController::class, 'update'])->name('notices.update');
+    Route::delete('/admin/notices/{notice}', [NoticeController::class, 'destroy'])->name('notices.destroy');
+});
 
 
 require __DIR__.'/auth.php';

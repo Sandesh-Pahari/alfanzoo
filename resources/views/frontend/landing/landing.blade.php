@@ -1,24 +1,39 @@
 @extends('template.template')
 
 @section('pagecontent')
-     {{-- Notice Popup --}}
-    @include('frontend.notice.show')
-    <section id="hero" class="">
+    {{-- Notice Popup --}}
+    @include('frontend.landing.notice')
+
+    {{-- Sections --}}
+    <section id="hero">
         @include('frontend.landing.hero')
     </section>
-    <section id="about" class="">
+
+    <section id="about">
         @include('frontend.landing.about')
     </section>
-    <section id="facility" class="">
+
+    <section id="facility">
         @include('frontend.landing.facility')
     </section>
-    <section id="facility" class="">
+
+    <section id="room">
         @include('frontend.landing.room')
     </section>
-    <section id="facility" class="">
+
+    <section id="gallery">
         @include('frontend.landing.gallery')
     </section>
-    
-
-    
 @endsection
+@section('scripts')
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>

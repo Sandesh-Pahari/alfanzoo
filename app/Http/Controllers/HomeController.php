@@ -6,20 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\About;
 use App\Models\Gallery;
 use App\Models\Room;
+use App\Models\Notice;
 
 class HomeController extends Controller
 {
     public function index()
     {
-                $about = About::first();
-                $photos = Gallery::limit(10)->get();
-                $rooms = Room::all();
-
-
-                
-                
-
-        return view('frontend.landing.landing', compact('about', 'photos','rooms'));
-        
+        $about = About::first();
+        $photos = Gallery::limit(10)->get();
+        $rooms = Room::all();
+        $notice = Notice::latest()->first();
+        return view('frontend.landing.landing', compact('about', 'photos', 'rooms', 'notice'));
     }
 }

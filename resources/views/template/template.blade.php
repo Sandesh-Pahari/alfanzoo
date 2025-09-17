@@ -17,6 +17,7 @@
         <script src="https://kit.fontawesome.com/14e5f92c3c.js" crossorigin="anonymous"></script>
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="//unpkg.com/alpinejs" defer></script>
     <style>
         /* Ensure active color overrides other states */
         [data-active] {

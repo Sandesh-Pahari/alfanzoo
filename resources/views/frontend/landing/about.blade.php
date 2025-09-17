@@ -2,22 +2,6 @@
 <section id="about" class="px-6 md:px-12 lg:px-20 bg-brand-sun/10 relative py-20 ">
     <div class="container mx-auto mt-22">
 
-        {{-- Top right corner buttons (only for authenticated users) --}}
-        {{-- @auth
-            <div class="absolute top-4 right-4">
-                @if($about)
-                    <a href="{{ route('about.edit', $about->id) }}" 
-                       class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
-                        Edit
-                    </a>
-                @else
-                    <a href="{{ route('about.create') }}" 
-                       class="px-4 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition">
-                        Create
-                    </a>
-                @endif
-            </div>
-        @endauth --}}
 
         <div class="flex flex-col lg:flex-row items-center justify-between gap-14">
             

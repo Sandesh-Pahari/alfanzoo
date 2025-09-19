@@ -1,7 +1,7 @@
 <section class="bg-alfan-white" id="gallery">
 
     <!-- Header Section -->
-    <div class="relative max-w-[80%] mx-auto py-4 px-4 sm:px-6 lg:px-8 reveal-top">
+    <div class="relative max-w-[85%] mx-auto py-4 px-4 sm:px-6 lg:px-8 reveal-top">
         <div class="text-center mb-6">
             <h1 class="text-4xl md:text-5xl font-bold text-brand-brown font-serif">
                 <span class="relative inline-block highlight-text">
@@ -12,7 +12,7 @@
     </div>
 
     <!-- Gallery Container -->
-    <div class="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="max-w-[85%] mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         @if ($photos->count() > 0)
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
                 id="gallery-container">
@@ -512,7 +512,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const sr = ScrollReveal({
-        reset: true,           // replay animation when scrolling back
+        reset: false,           // replay animation when scrolling back
         distance: "50px",
         duration: 1200,
         easing: "ease-in-out",

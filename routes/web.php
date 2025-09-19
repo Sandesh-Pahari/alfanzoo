@@ -16,6 +16,7 @@ use App\Http\Controllers\TableController;
 use App\Http\Controllers\Admin\TableAdminController;
 use App\Http\Controllers\Admin\BookingAdminController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\TeamMemberController;
 
 // ---------------- Home ----------------
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -117,6 +118,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/notices/{notice}/edit', [NoticeController::class, 'edit'])->name('notices.edit');
     Route::put('/admin/notices/{notice}', [NoticeController::class, 'update'])->name('notices.update');
     Route::delete('/admin/notices/{notice}', [NoticeController::class, 'destroy'])->name('notices.destroy');
+});
+
+
+
+Route::prefix('ourteam')->group(function () {
+
+    Route::get('/create', [TeamMemberController::class, 'create'])->name('ourteam.create');
+    Route::post('/store', [TeamMemberController::class, 'store'])->name('ourteam.store');
+    Route::get('/{teamMember}/edit', [TeamMemberController::class, 'edit'])->name('ourteam.edit');
+    Route::put('/{teamMember}', [TeamMemberController::class, 'update'])->name('ourteam.update');
+    Route::delete('/{teamMember}', [TeamMemberController::class, 'destroy'])->name('ourteam.destroy');
 });
 
 

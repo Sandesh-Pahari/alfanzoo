@@ -1,35 +1,18 @@
 <section class="bg-alfan-white" id="gallery">
 
     <!-- Header Section -->
-    <div class="relative max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+    <div class="relative max-w-[80%] mx-auto py-4 px-4 sm:px-6 lg:px-8 reveal-top">
         <div class="text-center mb-6">
-            <h1 class="text-4xl  md:text-5xl font-bold text-brand-brown font-serif">
+            <h1 class="text-4xl md:text-5xl font-bold text-brand-brown font-serif">
                 <span class="relative inline-block highlight-text">
                     Alfanzoo Gallery
                 </span>
             </h1>
-            {{-- <p class="mt-4 text-lg text-alfan-green-dark max-w-4xl mx-auto">
-                Explore the captivating moments captured at Alfanzoo Resort. Our gallery showcases the beauty and joy of
-                our guests as they create unforgettable memories amidst nature and adventure.
-            </p> --}}
         </div>
-
-        {{-- <!-- Controls Section -->
-        <div class="flex flex-col sm:flex-row justify-center items-center mb-6 gap-4">
-            <!-- Add Items Button -->
-            @auth
-                <a href="{{ route('gallery.create') }}">
-                    <button
-                        class="bg-brand-brown hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 flex items-center">
-                        <i class="fas fa-plus mr-2"></i> Add Photo
-                    </button>
-                </a>
-            @endauth
-        </div> --}}
     </div>
 
     <!-- Gallery Container -->
-    <div class="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         @if ($photos->count() > 0)
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
                 id="gallery-container">
@@ -37,7 +20,7 @@
                 <!-- Photo Items -->
                 @foreach ($photos as $photo)
                     <div
-                        class="gallery-item rounded-xl overflow-hidden shadow-lg bg-white cursor-pointer transition-all duration-300 hover:scale-[1.02] relative group">
+                        class="gallery-item rounded-xl overflow-hidden shadow-lg bg-white cursor-pointer transition-all duration-300 hover:scale-[1.02] relative group reveal-gallery">
                         <div class="overflow-hidden rounded-t-xl aspect-[4/3]">
                             <img src="{{ asset('storage/' . $photo->file_path) }}" alt="{{ $photo->title }}"
                                 class="w-full h-full object-cover transition duration-300 group-hover:opacity-90 open-fullscreen"
@@ -50,7 +33,6 @@
                         </div>
                         <div class="action-buttons">
                             @auth
-
                                 <form action="{{ route('gallery.destroy', $photo->id) }}" method="POST"
                                     class="delete-btn-form">
                                     @csrf @method('DELETE')
@@ -66,7 +48,7 @@
             </div>
         @else
             <!-- Empty State -->
-            <div class="text-center py-16">
+            <div class="text-center py-16 reveal-empty">
                 <div class="text-6xl mb-4 text-gray-300">📷</div>
                 <h3 class="text-xl font-semibold text-gray-600 mb-2">No photos yet</h3>
                 @auth
@@ -80,6 +62,9 @@
         @endif
     </div>
 </section>
+
+
+
 
 <!-- Fullscreen Overlay -->
 <div class="fullscreen-overlay" id="fullscreenOverlay">
@@ -522,4 +507,35 @@
             }
         });
     });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const sr = ScrollReveal({
+        reset: true,           // replay animation when scrolling back
+        distance: "50px",
+        duration: 1200,
+        easing: "ease-in-out",
+    });
+
+    // Header reveal
+    sr.reveal(".reveal-top", {
+        origin: "top",
+        delay: 200
+    });
+
+    // Gallery items stagger
+    sr.reveal(".reveal-gallery", {
+        origin: "bottom",
+        interval: 150,   // staggered reveal
+        delay: 300
+    });
+
+    // Empty state reveal
+    sr.reveal(".reveal-empty", {
+        origin: "bottom",
+        delay: 300,
+        scale: 0.9
+    });
+});
 </script>

@@ -1,29 +1,27 @@
+
 <section class="w-full bg-alfan-white py-16 px-24 ">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 items-stretch">
+    <div class="max-w-[85%] mx-auto flex flex-col md:flex-row gap-10 items-stretch">
 
         <!-- Left Side: Book a Table -->
-
-        <!-- Book a Table -->
-        <div class="relative flex-1 bg-white rounded-2xl shadow-2xl overflow-hidden md:flex">
+        <div class="relative flex-1 bg-white rounded-2xl shadow-2xl overflow-hidden md:flex scroll-reveal-left">
 
             <!-- Left Content -->
             <div class="relative z-10 px-10 flex flex-col justify-center text-center md:text-left h-full md:w-1/2">
                 <!-- Decorative gradient overlay -->
-                <div class="absolute inset-0 bg-gradient-to-br from-brand-aqua/10 to-brand-sky/10 pointer-events-none">
-                </div>
-                <h2 class="text-4xl md:text-4xl font-extrabold text-teal-600 mb-6 drop-shadow-md">
-                 Book Table
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-aqua/10 to-brand-sky/10 pointer-events-none"></div>
+                <h2 class="text-4xl md:text-4xl font-extrabold text-teal-600 mb-6 drop-shadow-md inner-reveal">
+                    Book Table
                 </h2>
 
                 <div class="relative z-10">
-                    <p class="text-lg md:text-xl text-alfan-black/90 max-w-lg mx-auto md:mx-0 mb-8 leading-relaxed">
+                    <p class="text-lg md:text-xl text-alfan-black/90 max-w-lg mx-auto md:mx-0 mb-8 leading-relaxed inner-reveal">
                         Experience <span class="font-semibold text-alfan-green">world-class dining</span> in the heart of
                         nature.
                         Reserve your spot for an <span class="italic text-brand-sky">unforgettable meal</span>
                         surrounded by wildlife and serenity.
                     </p>
                     <a href="{{ route('table.create') }}"
-                        class="inline-block bg-gradient-to-r from-brand-sky to-alfan-green hover:from-alfan-green hover:to-brand-sky text-white font-semibold px-8 py-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+                        class="inline-block bg-gradient-to-r from-brand-sky to-alfan-green hover:from-alfan-green hover:to-brand-sky text-white font-semibold px-8 py-4 rounded-full shadow-lg transform transition-all duration-300 hover:scale-110 hover:shadow-2xl inner-reveal">
                         🍽 Reserve Now
                     </a>
                 </div>
@@ -45,21 +43,19 @@
             </div>
         </div>
 
-
-
         <!-- Right Side: Weddings, Events & Conferences -->
-        <div class="flex-1 bg-white rounded-2xl shadow-xl p-10 relative overflow-hidden">
+        <div class="flex-1 bg-white rounded-2xl shadow-xl p-10 relative overflow-hidden scroll-reveal-right">
             <!-- Decorative background -->
             <div class="absolute inset-0 bg-white pointer-events-none"></div>
             <div class="relative z-10">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-brown mb-6 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-brown mb-6 text-center md:text-left inner-reveal">
                     Our Events and Programmes
                 </h2>
 
                 <!-- Events List -->
                 <div class="space-y-4 mb-8">
                     <!-- Weddings & Celebrations -->
-                    <div class="flex items-start gap-4">
+                    <div class="flex items-start gap-4 inner-reveal">
                         <img src="https://www.bihebazaar.com/uploads/2024/07/wedding-mandap-design-nepal.jpg"
                             alt="Weddings & Celebrations" class="w-20 h-20 object-cover rounded-xl shadow-md">
                         <div>
@@ -70,7 +66,7 @@
                     </div>
 
                     <!-- Cultural & Festival Events -->
-                    <div class="flex items-start gap-4">
+                    <div class="flex items-start gap-4 inner-reveal">
                         <img src="https://ichef.bbci.co.uk/images/ic/1200xn/p073zc9m.jpg"
                             alt="Cultural & Festival Events" class="w-20 h-20 object-cover rounded-xl shadow-md">
                         <div>
@@ -81,7 +77,7 @@
                     </div>
 
                     <!-- Meetings & Conferences -->
-                    <div class="flex items-start gap-4">
+                    <div class="flex items-start gap-4 inner-reveal">
                         <img src="https://pix10.agoda.net/hotelImages/8803651/-1/0f08448399f51d65c49e39ac66952c40.jpg?ca=9&ce=1&s=414x232"
                             alt="Meetings & Conferences" class="w-20 h-20 object-cover rounded-xl shadow-md">
                         <div>
@@ -93,7 +89,7 @@
                 </div>
 
                 <!-- Enquiry Button -->
-                <div class="text-center md:text-left">
+                <div class="text-center md:text-left inner-reveal">
                     <a href="{{ route('contact') }}"
                         class="inline-block bg-brand-gold hover:bg-alfan-orange-dark text-white font-semibold px-6 py-3 rounded-full shadow-md transition-transform hover:scale-105">
                         Enquire Now
@@ -101,6 +97,38 @@
                 </div>
             </div>
         </div>
-
     </div>
 </section>
+
+<!-- ScrollReveal Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sr = ScrollReveal({
+            reset: true,           // Replay animation on scroll back
+            distance: '60px',      // Slide distance
+            duration: 1500,        // Animation duration
+            delay: 100,            // Base delay
+            easing: 'ease-in-out',
+            mobile: true
+        });
+
+        // Left Card (Book Table)
+        sr.reveal('.scroll-reveal-left', {
+            origin: 'left',
+            delay: 100
+        });
+
+        // Right Card (Events)
+        sr.reveal('.scroll-reveal-right', {
+            origin: 'right',
+            delay: 200
+        });
+
+        // Inner staggered elements (headings, text, buttons, list items)
+        sr.reveal('.inner-reveal', {
+            origin: 'bottom',
+            interval: 200,
+            scale: 0.95
+        });
+    });
+</script>

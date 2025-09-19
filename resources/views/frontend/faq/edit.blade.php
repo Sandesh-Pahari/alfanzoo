@@ -36,7 +36,7 @@
 
                 <div class="mt-8 flex justify-between items-center">
                     <button type="submit" 
-                            class="w-full bg-pastry-primary hover:bg-pastry-secondary text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 hover:scale-[1.02] shadow-md">
+                            class="w-full bg-pastry-primary hover:bg-pastry-secondary text-white bg-blue-800 font-semibold py-3 px-6 rounded-lg transition-all duration-200 hover:scale-[1.02] shadow-md">
                         Update FAQ
                     </button>
                 </div>

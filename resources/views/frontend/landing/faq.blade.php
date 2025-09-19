@@ -57,12 +57,12 @@
     <div class="fixed top-1/4 right-1/4 w-12 h-12 rounded-full bg-alfan-black/10 animate-float-delay-2"></div>
 
     <div class="flex items-center justify-center">
-        <div class="w-full max-w-7xl">
+        <div class="w-full max-w-[85%]">
             <!-- Header -->
-            <div class="relative overflow-hidden bg-white/90 rounded-xl mb-8 shadow-lg backdrop-blur-sm">
+            <div class="relative overflow-hidden bg-white/90 rounded-xl mb-8 shadow-lg backdrop-blur-sm sr-header">
                 <div class="absolute inset-0 bg-gradient-to-r from-alfan-green/5 to-alfan-orange/5"></div>
                 <div class="relative z-10 text-center py-8 px-6">
-                    <h1 class="text-4xl  md:text-4xl font-bold text-brand-brown font-serif">
+                    <h1 class="text-4xl md:text-4xl font-bold text-brand-brown font-serif">
                         <span class="relative inline-block highlight-text">
                           FAQS of Alfanzoo Resort
                         </span>
@@ -91,7 +91,7 @@
             <!-- FAQ Container -->
             <div id="faq-container" class="space-y-6">
                 @foreach ($faqs as $index => $faq)
-                    <div class="group">
+                    <div class="group sr-faq">
                         <button
                           class="faq-toggle w-full flex justify-between items-center text-left p-6 text-lg font-semibold text-alfan-black bg-white focus:outline-none shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
                           onclick="toggleAnswer('answer{{ $faq->id }}')" aria-expanded="false">
@@ -148,7 +148,7 @@
             </div>
 
             <!-- Footer -->
-            <div class="mt-12 text-center">
+            <div class="mt-12 text-center sr-footer">
                 <p class="text-alfan-black">Still have questions?</p>
                 <button
                     class="mt-4 px-8 py-3 bg-gradient-to-r from-alfan-orange to-alfan-orange-dark text-white font-bold rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">
@@ -163,6 +163,35 @@
         </div>
     </div>
 </div>
+
+<!-- ✅ ScrollReveal -->
+
+<script>
+    ScrollReveal().reveal('.sr-header', {
+        delay: 200,
+        duration: 1000,
+        origin: 'top',
+        distance: '50px',
+        easing: 'ease-out'
+    });
+
+    ScrollReveal().reveal('.sr-faq', {
+        delay: 300,
+        duration: 800,
+        origin: 'bottom',
+        distance: '40px',
+        interval: 150, // stagger effect
+        easing: 'ease-in-out'
+    });
+
+    ScrollReveal().reveal('.sr-footer', {
+        delay: 200,
+        duration: 1000,
+        origin: 'bottom',
+        distance: '60px',
+        easing: 'ease-out'
+    });
+</script>
 
 <script>
     // Toggle FAQ answers
@@ -180,7 +209,7 @@
             }, { once: true });
         } else {
             answer.classList.add('open');
-            const fullHeight = answer.scrollHeight;
+            const fullHeight = answer.7xlscrollHeight;
             answer.style.maxHeight = fullHeight + 'px';
             answer.style.opacity = '1';
             icon.classList.add('rotate-180');

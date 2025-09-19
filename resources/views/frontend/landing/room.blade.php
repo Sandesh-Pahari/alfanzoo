@@ -1,28 +1,20 @@
 <section class="bg-alfan-white min-h-screen py-4 w-full">
-    <div class="flex flex-col items-center justify-center  px-10">
+    <div class="flex flex-col items-center justify-center px-10">
         <!-- Title -->
-        <div class="flex items-center justify-center w-full max-w-4xl mx-auto mb-4 xs:mb-4 mt-8">
-            <h1 class="text-4xl  md:text-5xl font-bold text-brand-brown font-serif">
+        <div class="flex items-center justify-center w-full max-w-4xl mx-auto mb-4 mt-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-brand-brown font-serif">
                 <span class="relative inline-block highlight-text">
                     Available Rooms
                 </span>
             </h1>
         </div>
-{{-- 
-        <div class="mt-4 flex gap-4">
-            @auth
-                <a href="{{ route('rooms.create') }}"
-                    class="bg-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600 transition duration-300 shadow-md">
-                    Add Room
-                </a>
-            @endauth
-        </div> --}}
     </div>
 
-    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 xmd:grid-cols-2 lg:grid-cols-3 gap-6 mb-5 mt-6 px-8">
-        @foreach ($rooms as $room)
+    <div class="max-w-[85%] mx-auto w-full grid grid-cols-1 xmd:grid-cols-2 lg:grid-cols-3 gap-4 mb-5 mt-6 px-4">
+        @foreach ($rooms as $index => $room)
             <div
-                class="room-card max-w-sm mx-auto bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+                class="room-card max-w-xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl reveal"
+                data-sr-delay="{{ 100 + ($index * 100) }}">
 
                 <!-- Room Image -->
                 @if ($room->image)
@@ -88,16 +80,21 @@
     </div>
 </section>
 
-<!-- ScrollReveal Script -->
-<script src="https://unpkg.com/scrollreveal"></script>
+{{-- ScrollReveal --}}
 <script>
-    ScrollReveal().reveal('.room-card', {
-        origin: 'bottom',
-        distance: '40px',
-        duration: 800,
-        delay: 100,
-        easing: 'ease-in-out',
-        interval: 150, // Stagger effect for multiple cards
-        reset: false // set true if you want re-animate on scroll back
+    document.addEventListener("DOMContentLoaded", function () {
+        const sr = ScrollReveal({
+            reset: true,
+            distance: '60px',
+            duration: 600,
+            easing: 'ease-in-out',
+            origin: 'bottom'
+        });
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+            let delay = el.getAttribute('data-sr-delay') || 100;
+            sr.reveal(el, { delay: parseInt(delay) });
+        });
     });
 </script>
+

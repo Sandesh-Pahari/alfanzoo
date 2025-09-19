@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 xmd:grid-cols-2 lg:grid-cols-3 gap-6 mb-5 mt-6 px-8">
+        <div class="max-w-[80%] mx-auto w-full grid grid-cols-1 xmd:grid-cols-2 lg:grid-cols-3 gap-6 mb-5 mt-6 px-8">
             @foreach ($rooms as $room)
                 <div
                     class="room-card max-w-sm mx-auto bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl">

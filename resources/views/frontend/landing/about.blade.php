@@ -1,8 +1,5 @@
-
 <section id="about" class="px-6 md:px-12 lg:px-20 bg-alfan-white relative py-20 ">
     <div class="container mx-auto">
-
-
         <div class="flex flex-col lg:flex-row items-center justify-between gap-14">
             
             <!-- Image Section -->
@@ -27,9 +24,6 @@
                     {{ $about?->description ?? 'Write about your company here...' }}
                 </p>
 
-                <!-- Feature Items (Optional dynamic loop later) -->
-                
-                
                 <button class="px-8 py-3 bg-brand-gold text-white rounded-full font-semibold shadow-md hover:bg-brand-brown transition-all transform hover:-translate-y-1">
                     Learn More
                 </button>
@@ -38,44 +32,46 @@
     </div>
 </section>
 
-{{-- Animations --}}
 <style>
-    /* Scroll Reveal Animation */
-    .reveal {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.9s ease-in-out;
-    }
-    .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
     /* Floating Animation */
-    .floating {
-        animation: float 6s ease-in-out infinite;
-    }
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-15px); }
-    }
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
 
-    /* Feature Item Hover */
-    .feature-item:hover {
-        transform: translateX(12px);
-        transition: transform 0.3s ease;
-    }
+/* Feature Item Hover */
+.feature-item:hover {
+    transform: translateX(12px);
+    transition: transform 0.3s ease;
+}
+
 </style>
 
 <script>
-    // Scroll Reveal JS
-    document.addEventListener("scroll", () => {
-        document.querySelectorAll(".reveal").forEach((el) => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) {
-                el.classList.add("active");
-            }
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize ScrollReveal
+        const sr = ScrollReveal({
+            reset: true,           // replay on scroll back
+            distance: '60px',      // slide distance
+            duration: 1600,        // animation time (ms)
+            delay: 100,            // base delay
+            easing: 'ease-in-out', // smooth transition
+            mobile: true
+        });
+
+        // Reveal image from left
+        sr.reveal('.reveal:nth-child(1)', {
+            origin: 'left',
+            delay: 200,
+        });
+
+        // Reveal content from right
+        sr.reveal('.reveal:nth-child(2)', {
+            origin: 'right',
+            delay: 300,
         });
     });
 </script>
-

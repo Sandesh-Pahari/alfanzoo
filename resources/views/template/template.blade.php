@@ -16,7 +16,7 @@
         rel="stylesheet">
         <script src="https://kit.fontawesome.com/14e5f92c3c.js" crossorigin="anonymous"></script>
     <!-- Styles -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js','resources/js/scrollreveal.min.js'])
     <script src="//unpkg.com/alpinejs" defer></script>
     <style>
         /* Ensure active color overrides other states */
@@ -71,9 +71,55 @@
         }
     </style>
 
+      <style>
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #fff; /* you can change to dark if needed */
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        #preloader img {
+          height: 350px;
+            width: 350px; /* big logo */
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        #preloader p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Hide after loaded */
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+
 </head>
 
 <body class="min-h-screen flex flex-col">
+      <div id="preloader">
+        <img src="{{ asset('alphanzoo/logo/Alfanzoo.png') }}" alt="Logo">
+        <p>Loading, please wait...</p>
+    </div>
+
     <section id="header">
         @include('layouts.header')
     </section>
@@ -120,6 +166,20 @@
             });
         });
     </script>
+
+    {{-- <script src="{{asset('js.sc')}}"></script> --}}
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+   // Preloader hide on load
+        window.addEventListener("load", () => {
+            const preloader = document.getElementById("preloader");
+            setTimeout(() => {
+                preloader.classList.add("hidden");
+            }, 500); // little delay for smoothness
+        });
+</script>
+
 
 
 </body>

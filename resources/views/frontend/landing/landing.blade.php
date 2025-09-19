@@ -11,19 +11,25 @@
 
     <section id="about">
         @include('frontend.landing.about')
-    </section>
+
 
     <section id="facility">
         @include('frontend.landing.facility')
     </section>
 
-    <section id="events">
+           </section>
+        <section id="events">
         @include('frontend.landing.events')
     </section>
+
+
+
+
     <section id="room">
         @include('frontend.landing.room')
     </section>
 
+ 
     <section id="gallery">
         @include('frontend.landing.gallery')
     </section>
@@ -31,7 +37,7 @@
         @include('frontend.landing.faq')
     </section>
 @endsection
-@section('scripts')
+{{-- @section('scripts')
     <script>
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -42,4 +48,4 @@
                 });
             });
         });
-    </script>
+    </script> --}}

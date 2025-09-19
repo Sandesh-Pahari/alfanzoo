@@ -123,7 +123,7 @@
     <section id="header">
         @include('layouts.header')
     </section>
-    <section class="bg-brand-sun/10" style="overflow: hidden;">
+    <section class="bg-brand-sun/10" style="overflow: hidden;+">
         @yield('pagecontent')
     </section>
 

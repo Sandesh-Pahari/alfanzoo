@@ -33,6 +33,12 @@
     <section id="gallery">
         @include('frontend.landing.gallery')
     </section>
+
+     <section id="gallery">
+        @include('frontend.landing.team')
+    </section>
+
+    
     <section id="faq">
         @include('frontend.landing.faq')
     </section>

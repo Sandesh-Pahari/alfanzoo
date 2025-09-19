@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\TeamMember;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -10,7 +11,9 @@ class AboutController extends Controller
     public function index()
     {
         $about = About::first(); // only one record
-        return view('frontend.about.index', compact('about'));
+                $teamMembers = TeamMember::orderBy('order')->get();
+        // return view('frontend.about.index', compact('teamMembers'));
+        return view('frontend.about.index', compact('about','teamMembers'));
     }
 
     public function create()

@@ -79,7 +79,7 @@
                         <!-- Buttons -->
                         <div class="flex justify-between">
                             <button onclick="window.location='{{ route('booking.create', $room->id) }}'"
-                                class="px-4 py-2 inline-flex items-center gap-3 bg-brand-brown/90 backdrop-blur-lg border border-alfan-orange/30 rounded-full text-brand-sun hover:bg-brand-brown hover:text-white transition-all duration-300 transform hover:scale-105">
+                                class="px-4 py-2 inline-flex items-center gap-3 bg-brand-gold backdrop-blur-lg border border-alfan-orange/30 rounded-full text-white hover:bg-brand-brown hover:text-white transition-all duration-300 transform hover:scale-105">
                                 BOOK NOW
                             </button>
                             <button onclick="window.location='{{ route('rooms.show', $room->id) }}'"

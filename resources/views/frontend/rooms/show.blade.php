@@ -116,7 +116,7 @@
             <section class="relative">
                 <div class="flex items-start gap-6">
                     <div class="hidden md:block">
-                        <div class="w-16 h-16 bg-alfan-green rounded-2xl flex items-center justify-center text-white shadow-xl">
+                        <div class="w-16 h-16 text-4xl bg-alfan-green rounded-2xl flex items-center justify-center text-white shadow-xl">
                             📜
                         </div>
                     </div>

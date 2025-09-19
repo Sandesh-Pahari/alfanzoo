@@ -1,17 +1,17 @@
-<section class="bg-brand-sun/10 pt-1" id="gallery">
+<section class="bg-alfan-white" id="gallery">
 
     <!-- Header Section -->
-    <div class="relative max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 mt-8">
+    <div class="relative max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-6">
-            <h1 class="text-4xl italic md:text-5xl font-bold text-brand-brown font-serif">
+            <h1 class="text-4xl  md:text-5xl font-bold text-brand-brown font-serif">
                 <span class="relative inline-block highlight-text">
                     Alfanzoo Gallery
                 </span>
             </h1>
-            <p class="mt-4 text-lg text-alfan-green-dark max-w-4xl mx-auto">
+            {{-- <p class="mt-4 text-lg text-alfan-green-dark max-w-4xl mx-auto">
                 Explore the captivating moments captured at Alfanzoo Resort. Our gallery showcases the beauty and joy of
                 our guests as they create unforgettable memories amidst nature and adventure.
-            </p>
+            </p> --}}
         </div>
 
         {{-- <!-- Controls Section -->

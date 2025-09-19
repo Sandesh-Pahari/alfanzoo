@@ -1,14 +1,12 @@
-<section class="bg-brand-sun/10  min-h-screen w-full">
+<section class="bg-alfan-white min-h-screen py-4 w-full">
     <div class="flex flex-col items-center justify-center  px-10">
         <!-- Title -->
-        <div class="flex items-center justify-center w-full max-w-4xl mx-auto xs:mb-4 mt-8">
-            <div class="hidden sm:block flex-1 border-t-2  border-brand-brown"></div>
-            <h1 class="text-4xl italic md:text-5xl font-bold text-brand-brown font-serif">
+        <div class="flex items-center justify-center w-full max-w-4xl mx-auto mb-4 xs:mb-4 mt-8">
+            <h1 class="text-4xl  md:text-5xl font-bold text-brand-brown font-serif">
                 <span class="relative inline-block highlight-text">
                     Available Rooms
                 </span>
             </h1>
-            <div class="hidden sm:block flex-1 border-t-2 border-brand-brown"></div>
         </div>
 {{-- 
         <div class="mt-4 flex gap-4">
@@ -76,7 +74,7 @@
                     <!-- Buttons -->
                     <div class="flex justify-between">
                         <button onclick="window.location='{{ route('booking.create', $room->id) }}'"
-                            class="px-4 py-2 inline-flex items-center gap-3 bg-brand-brown/90 backdrop-blur-lg border border-alfan-orange/30 rounded-full text-brand-sun hover:bg-brand-brown hover:text-white transition-all duration-300 transform hover:scale-105">
+                            class="px-4 py-2 inline-flex items-center gap-3 bg-brand-gold backdrop-blur-lg border border-alfan-orange/30 rounded-full hover:bg-brand-brown text-white hover:text-white transition-all duration-300 transform hover:scale-105">
                             BOOK NOW
                         </button>
                         <button onclick="window.location='{{ route('rooms.show', $room->id) }}'"

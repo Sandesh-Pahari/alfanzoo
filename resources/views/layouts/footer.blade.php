@@ -1,4 +1,4 @@
-<footer class="relative mt-16 text-white overflow-hidden font-sans">
+<footer class="relative  text-white overflow-hidden font-sans">
   <!-- Parallax Background Image with Overlay -->
   <div class="absolute inset-0 bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmVzb3J0fGVufDB8fDB8fHww');"></div>
   <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90"></div>

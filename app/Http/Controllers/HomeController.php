@@ -7,6 +7,7 @@ use App\Models\About;
 use App\Models\Gallery;
 use App\Models\Room;
 use App\Models\Notice;
+use App\Models\Faq;
 
 class HomeController extends Controller
 {
@@ -16,6 +17,8 @@ class HomeController extends Controller
         $photos = Gallery::limit(10)->get();
         $rooms = Room::all();
         $notice = Notice::latest()->first();
-        return view('frontend.landing.landing', compact('about', 'photos', 'rooms', 'notice'));
+        $faqs = Faq::limit(10)->get();
+
+        return view('frontend.landing.landing', compact('about', 'photos', 'rooms', 'notice','faqs'));
     }
 }

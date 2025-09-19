@@ -17,12 +17,18 @@
         @include('frontend.landing.facility')
     </section>
 
+    <section id="events">
+        @include('frontend.landing.events')
+    </section>
     <section id="room">
         @include('frontend.landing.room')
     </section>
 
     <section id="gallery">
         @include('frontend.landing.gallery')
+    </section>
+    <section id="faq">
+        @include('frontend.landing.faq')
     </section>
 @endsection
 @section('scripts')

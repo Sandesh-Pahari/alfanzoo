@@ -1,6 +1,6 @@
 
-<section id="about" class="px-6 md:px-12 lg:px-20 bg-brand-sun/10 relative py-20 ">
-    <div class="container mx-auto mt-22">
+<section id="about" class="px-6 md:px-12 lg:px-20 bg-alfan-white relative py-20 ">
+    <div class="container mx-auto">
 
 
         <div class="flex flex-col lg:flex-row items-center justify-between gap-14">

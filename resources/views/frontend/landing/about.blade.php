@@ -1,5 +1,5 @@
-<section id="about" class="px-6 md:px-12 lg:px-20 bg-alfan-white relative py-20 ">
-    <div class="container mx-auto">
+<section id="about" class=" px-6 bg-[#f9f7ed] relative py-20 ">
+    <div class="max-w-[85%] mx-auto">
         <div class="flex flex-col lg:flex-row items-center justify-between gap-14">
             
             <!-- Image Section -->

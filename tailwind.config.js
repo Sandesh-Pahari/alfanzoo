@@ -36,6 +36,12 @@ export default {
                 'brand-brown': '#6B4B34',
                 
             },
+                  screens: {
+        'xxs': '320px',   // extra extra small
+        'xms': '375px',   // extra mini small
+        // you can add more custom breakpoints if needed
+      },
+
         },
     },
 

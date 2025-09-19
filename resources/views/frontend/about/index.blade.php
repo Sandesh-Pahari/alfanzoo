@@ -97,7 +97,7 @@
         }
     </style>
 
-    <script>
+    {{-- <script>
         // Scroll Reveal JS
         document.addEventListener("scroll", () => {
             document.querySelectorAll(".reveal").forEach((el) => {
@@ -107,5 +107,5 @@
                 }
             });
         });
-    </script>
+    </script> --}}
 @endsection

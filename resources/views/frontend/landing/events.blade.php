@@ -1,5 +1,5 @@
 
-<section class="w-full bg-alfan-white py-16 px-24 ">
+<section class="w-full bg-alfan-white py-16 px-10 ">
     <div class="max-w-[85%] mx-auto flex flex-col md:flex-row gap-10 items-stretch">
 
         <!-- Left Side: Book a Table -->

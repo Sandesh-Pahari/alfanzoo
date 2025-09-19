@@ -60,7 +60,7 @@
     </section>
 
     {{-- Animations --}}
-    <style>
+    {{-- <style>
         /* Scroll Reveal Animation */
         .reveal {
             opacity: 0;
@@ -95,7 +95,7 @@
             transform: translateX(12px);
             transition: transform 0.3s ease;
         }
-    </style>
+    </style> --}}
 
     {{-- <script>
         // Scroll Reveal JS

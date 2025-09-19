@@ -512,7 +512,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const sr = ScrollReveal({
-        reset: true,           // replay animation when scrolling back
+        reset: false,           // replay animation when scrolling back
         distance: "50px",
         duration: 1200,
         easing: "ease-in-out",

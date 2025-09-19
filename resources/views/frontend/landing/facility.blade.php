@@ -98,7 +98,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const sr = ScrollReveal({
-            reset: true,           // Replay animation on scroll back
+            reset: false,           // Replay animation on scroll back
             distance: '50px',      // Slide distance
             duration: 1400,        // Animation duration
             delay: 100,            // Base delay

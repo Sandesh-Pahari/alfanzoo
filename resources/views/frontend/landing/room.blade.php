@@ -77,7 +77,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const sr = ScrollReveal({
-            reset: true,
+            reset: false,
             distance: '60px',
             duration: 600,
             easing: 'ease-in-out',
